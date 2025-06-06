@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quién Quiere Ser Millonario? - Evaluación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <img src="assets/placeholder_logo.png" alt="Logo Millonario" class="logo-main">
+            <h1>Bienvenido a la Evaluación Millonaria</h1>
+            <p>Por favor, ingresa tu nombre:</p>
+            <input type="text" id="player-name-input" placeholder="Tu nombre" aria-label="Nombre del jugador">
+            <button id="start-game-btn">Comenzar Juego</button>
+            <p id="high-score-display">Mejor Puntuación: --</p>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <header class="game-header">
+                <img src="assets/placeholder_logo.png" alt="Logo" class="logo-small">
+                <div id="player-info">
+                    Jugador: <span id="current-player-name"></span>
+                </div>
+                <div id="current-score-display">Nota: 1.0</div>
+            </header>
+
+            <main class="game-main">
+                <aside class="lifelines">
+                    <button id="lifeline-5050" class="lifeline-btn" data-type="5050" aria-label="Ayuda 50-50">
+                        <span class="icon">₅₀⁄₅₀</span> 50-50
+                    </button>
+                    <button id="lifeline-phone" class="lifeline-btn" data-type="phone" aria-label="Ayuda Llamar a un amigo">
+                        <span class="icon">📞</span> Amigo
+                    </button>
+                    <button id="lifeline-audience" class="lifeline-btn" data-type="audience" aria-label="Ayuda Preguntar al público">
+                        <span class="icon">📊</span> Público
+                    </button>
+                    <button id="lifeline-dice" class="lifeline-btn" data-type="dice" aria-label="Ayuda Tirar el dado">
+                        <span class="icon">🎲</span> Dado
+                    </button>
+                    <button id="lifeline-change" class="lifeline-btn" data-type="change" aria-label="Ayuda Cambiar pregunta">
+                        <span class="icon">🔄</span> Cambiar
+                    </button>
+                </aside>
+
+                <section class="question-area">
+                    <div id="question-card">
+                        <p id="question-text">Cargando pregunta...</p>
+                    </div>
+                    <div id="audience-chart-container" class="audience-chart-container" style="display: none;">
+                        <!-- Barras del gráfico se generan aquí -->
+                    </div>
+                    <div id="options-container" class="options-container">
+                        <!-- Botones de opciones se generan aquí -->
+                    </div>
+                </section>
+
+                <aside class="progress-ladder">
+                    <ul>
+                        <!-- Niveles se generan aquí -->
+                    </ul>
+                </aside>
+            </main>
+             <div id="horizontal-progress-bar-container">
+                <div id="horizontal-progress-bar"></div>
+            </div>
+        </div>
+
+        <div id="end-screen" class="screen">
+            <img src="assets/placeholder_logo.png" alt="Logo Millonario" class="logo-main">
+            <h1>Juego Terminado</h1>
+            <p id="final-result"></p>
+            <p id="final-high-score-display">Mejor Puntuación Histórica: --</p>
+            <button id="play-again-btn">Volver a Jugar</button>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="assets/correct.mp3"></audio>
+    <audio id="wrong-sound" src="assets/wrong.mp3"></audio>
+    <audio id="lifeline-sound" src="assets/lifeline.mp3"></audio>
+    <audio id="next-question-sound" src="assets/next_question.mp3"></audio>
+    <!-- <audio id="background-music" src="assets/background_music.mp3" loop></audio> -->
+
+    <script src="script.js"></script>
+</body>
+</html>
